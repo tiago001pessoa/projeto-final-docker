@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify
-from .models import db, Movie, User, Rating
+from models import db, Movie, User, Rating
 
 bp = Blueprint("api", __name__)
 
