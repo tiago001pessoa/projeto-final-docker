@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, render_template_string
 from models import init_db, db, Movie, User, Rating
+from .views import bp
 
 app = Flask(__name__)
 app.config.from_mapping(
@@ -9,6 +10,7 @@ app.config.from_mapping(
     }
 )
 init_db(app)
+app.register_blueprint(bp)
 
 INDEX_HTML = """
 <!doctype html>
