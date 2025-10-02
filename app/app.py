@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, render_template_string
 from models import init_db, db, Movie, User, Rating
-from .views import bp
+from views import bp
 
 app = Flask(__name__)
 app.config.from_mapping(
