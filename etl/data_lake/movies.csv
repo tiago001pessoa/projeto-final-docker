@@ -1,0 +1,24 @@
+movie_id,title,year,genre
+1,The Shawshank Redemption ,1994 ,Drama
+2,The Godfather,1972,Crime
+3,The Dark Knight,2008, Action
+4,Pulp Fiction,1994,Crime
+5,Schindler's List,1993,Drama
+6,12 Angry Men,1957,Drama
+7, Inception,2010,Action
+8,Fight Club,1999,Drama
+9,Forrest Gump,1994,Comedy-Drama
+10,The Matrix,1999, Action
+11,Goodfellas,1990,Crime
+12,Se7en,1995,Thriller
+13,City of God,2002,Crime
+14, Spirited Away,2001,Animation
+15,Parasite,2019,Thriller
+16,Interstellar,2014, Sci-Fi
+17,The Green Mile,1999,Drama
+18,Gladiator,2000,Action
+19,Whiplash,2014,Drama
+20,The Intouchables,2011,Comedy-Drama
+21,The Godfather,1972,Crime   # duplicado
+22,,2015,Action               # título vazio
+23,The Artist,XXXX,Drama      # ano inválido

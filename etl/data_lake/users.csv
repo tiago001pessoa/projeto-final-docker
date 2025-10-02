@@ -1,0 +1,23 @@
+user_id,name,age,country
+1,Ana,28,Brazil
+2, John ,35,USA
+3,Maria,17, Brazil
+4,Pedro,abc,Portugal           # idade inválida
+5,,22,Argentina                 # nome vazio
+6,Liu Wei,31,China
+7,Ahmed,27,Egypt
+8,Sarah,29,Canada
+9,Lucas,40,Brazil
+10,John,35,USA                  # duplicado
+11,Mohammed,55,Egypt
+12,Olga,45,Russia
+13,Akira,19,Japan
+14,Giulia,33,Italy
+15,Kate,25,UK
+16,Juan,27,Mexico
+17,Sven,30,Germany
+18,Yara,20,Brazil
+19,Paul,38,France
+20,Emma,26,USA
+21,Bob,,USA                     # idade nula
+22,Carla,27,                   # país vazio
