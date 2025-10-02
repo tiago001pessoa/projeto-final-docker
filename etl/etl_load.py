@@ -81,6 +81,12 @@ def load_csv(conn, csv_path, table, columns, cleaner):
     conn.commit()
 
 
+def load_existing_ids(conn, table, id_column):
+    with conn.cursor() as cur:
+        cur.execute(f"SELECT {id_column} FROM {table}")
+        return set(row[0] for row in cur.fetchall())
+
+
 def main():
     conn = connect()
     try:
@@ -98,12 +104,25 @@ def main():
             ["user_id", "name", "age", "country"],
             clean_user,
         )
+        # Carregar IDs existentes
+        movie_ids = load_existing_ids(conn, "movies", "movie_id")
+        user_ids = load_existing_ids(conn, "users", "user_id")
+
+        def clean_rating_with_fk(row):
+            cleaned = clean_rating(row)
+            if not cleaned:
+                return None
+            _, user_id, movie_id, *_ = cleaned
+            if user_id not in user_ids or movie_id not in movie_ids:
+                return None
+            return cleaned
+
         load_csv(
             conn,
             "etl/data_lake/ratings.csv",
             "ratings",
             ["rating_id", "user_id", "movie_id", "score", "timestamp"],
-            clean_rating,
+            clean_rating_with_fk,
         )
     finally:
         conn.close()
